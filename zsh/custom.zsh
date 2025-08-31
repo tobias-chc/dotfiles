@@ -20,7 +20,7 @@ eval "$(starship init zsh)"
 starship config palette $STARSHIP_THEME
 
 # zoxide - a better cd command
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # fzf
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
