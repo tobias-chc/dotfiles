@@ -41,5 +41,5 @@ cd dotfiles
 2. Create symlinks using GNU stow:
 
 ```sh
-stow --target=$HOME/.config .
+stow .
 ```

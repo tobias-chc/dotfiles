@@ -11,7 +11,7 @@ alias reload-zsh="source $ZDOTDIR/.zshrc"
 alias edit-zsh="nvim $ZDOTDIR/.zshrc"
 
 # Stow
-alias stow='stow --target=$HOME/.config'
+# alias stow='stow --target=$HOME/.config'
 alias chkstow='chkstow --target=$HOME/.config'
 
 # Git
