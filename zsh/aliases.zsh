@@ -46,8 +46,14 @@ alias gcan='git commit --amend --no-edit'
 alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
 
-# Better ls
+# Dirs
+alias ..="cd .."
+
+# Eza, better ls
 alias ls="eza --icons=always"
+alias lsa="eza -l --icons --git -a"
+alias lt="eza --tree --level=2  --icons --git"
+alias ltree="eza --tree --level=2 --long --icons --git"
 
 # Better cat
 alias cat="bat"
