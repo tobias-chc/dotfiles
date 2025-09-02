@@ -1,5 +1,11 @@
 # Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ "$(uname)" == "Darwin" ]]; then
+  # Homebrew on macOS
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  # Homebrew on Linux
+elif [[ "$(uname)" == "Linux" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Pipenv
