@@ -31,4 +31,5 @@ require('lazy').setup {
   require 'plugins.indent-blanklines',
   require 'plugins.gitsigns',
   require 'plugins.misc',
+  require 'plugins.comments',
 }
