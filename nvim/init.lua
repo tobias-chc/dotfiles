@@ -33,4 +33,5 @@ require('lazy').setup {
   require 'plugins.misc',
   require 'plugins.comments',
   require 'plugins.avante',
+  require 'plugins.floaterm',
 }
