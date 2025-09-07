@@ -32,4 +32,5 @@ require('lazy').setup {
   require 'plugins.git-conf',
   require 'plugins.misc',
   require 'plugins.comments',
+  require 'plugins.avante',
 }
