@@ -121,3 +121,17 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Save and load session
 vim.keymap.set('n', '<leader>ss', ':mksession! .session.vim<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>sl', ':source .session.vim<CR>', { noremap = true, silent = false })
+
+-- Close fugitive windows with only ESC
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'fugitive',
+  callback = function()
+    vim.keymap.set('n', '<Esc>', function()
+      if vim.v.hlsearch == 1 then
+        vim.cmd 'nohlsearch'
+      else
+        vim.cmd 'q'
+      end
+    end, { buffer = true, silent = true })
+  end,
+})

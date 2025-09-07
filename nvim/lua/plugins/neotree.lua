@@ -1,4 +1,4 @@
- return {
+return {
   'nvim-neo-tree/neo-tree.nvim',
   event = 'VeryLazy',
   branch = 'v3.x',
@@ -28,7 +28,7 @@
       keys = {
         { '<leader>w', ':Neotree toggle float<CR>', silent = true, desc = 'Float File Explorer' },
         { '<leader>e', ':Neotree toggle position=left<CR>', silent = true, desc = 'Left File Explorer' },
-        { '<leader>ngs', ':Neotree float git_status<CR>', silent = true, desc = 'Neotree Open Git Status Window' },
+        { '<leader>ng', ':Neotree float git_status<CR>', silent = true, desc = 'Neotree Open Git Status Window' },
       },
     },
   },

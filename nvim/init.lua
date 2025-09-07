@@ -29,7 +29,7 @@ require('lazy').setup {
   require 'plugins.none-ls',
   require 'plugins.alpha',
   require 'plugins.indent-blanklines',
-  require 'plugins.gitsigns',
+  require 'plugins.git-conf',
   require 'plugins.misc',
   require 'plugins.comments',
 }
