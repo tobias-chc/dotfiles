@@ -33,8 +33,8 @@ return {
         },
         mappings = {
           i = {
-            ['<C-k>'] = actions.move_selection_previous, -- move to prev result
-            ['<C-j>'] = actions.move_selection_next, -- move to next result
+            ['<C-k>'] = actions.preview_scrolling_up, -- scroll preview up
+            ['<C-j>'] = actions.preview_scrolling_down, -- scroll preview down
             ['<C-l>'] = actions.select_default, -- open file
           },
           n = {
