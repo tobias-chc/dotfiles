@@ -14,6 +14,9 @@ export STARSHIP_THEME="nord"
 export WEZTERM_THEME="nord"
 export BAT_THEME=tokyonight_night
 
+# Update python files colors
+export LS_COLORS="${LS_COLORS}:*.py=38;5;159"
+
 # Locale settings
 export LANG="en_US.UTF-8" # Sets default locale for all categories
 export LC_ALL="en_US.UTF-8" # Overrides all other locale settings
@@ -26,4 +29,3 @@ export VISUAL="nvim"
 # Add /usr/local/bin to the beginning of the PATH environment variable.
 # This ensures that executables in /usr/local/bin are found before other directories in the PATH.
 export PATH="/usr/local/bin:$PATH"
-
