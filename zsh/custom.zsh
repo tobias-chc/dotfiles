@@ -49,3 +49,6 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # Activate autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Activate history substring search
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh

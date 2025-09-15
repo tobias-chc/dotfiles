@@ -3,6 +3,9 @@ HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
+HISTORY_SUBSTRING_SEARCH_PREFIXED=true
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_space
