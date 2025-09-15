@@ -15,8 +15,12 @@ config.color_scheme = themes[selected_theme]
 -- Add background configuration
 config.background = bg.background
 
--- Add keybinding for toggling transparency
+-- Disable all default key bindings
+config.disable_default_key_bindings = true
+
+local act = wezterm.action
 config.keys = {
+	-- Add keybinding for toggling transparency
 	{
 		key = "b",
 		mods = "CTRL|SHIFT",
@@ -24,6 +28,14 @@ config.keys = {
 			window:set_config_overrides({ background = bg.toggle_transparency() })
 		end),
 	},
+	-- Define only the Ctrl+Cmd+T binding to open a new tab (new terminal)
+	{ key = "T", mods = "CTRL|CMD", action = act.SpawnTab("DefaultDomain") },
+	-- Close current tab with Ctrl+Cmd+W
+	{ key = "W", mods = "CTRL|CMD", action = act.CloseCurrentTab({ confirm = false }) },
+	-- Copy (Ctrl+Shift+C on Linux/Windows, Cmd+C on macOS)
+	{ key = "C", mods = "CMD", action = act.CopyTo("Clipboard") },
+	-- Paste (Ctrl+Shift+V on Linux/Windows, Cmd+V on macOS)
+	{ key = "V", mods = "CMD", action = act.PasteFrom("Clipboard") },
 }
 
 return config
