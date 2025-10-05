@@ -1,12 +1,18 @@
 # Homebrew
-if [[ "$(uname)" == "Darwin" ]]; then
-  # Homebrew on macOS
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  # Homebrew on Linux
-elif [[ "$(uname)" == "Linux" ]]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+BREW_PATH=""
+if [[ "$(uname)" == "Darwin" && -x "/opt/homebrew/bin/brew" ]]; then
+  BREW_PATH="/opt/homebrew/bin/brew"
+elif [[ "$(uname)" == "Linux" && -x "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+  BREW_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
 fi
-export HOMEBREW_NO_AUTO_UPDATE=1
+
+if [[ -n "$BREW_PATH" ]]; then
+  export HOMEBREW_NO_AUTO_UPDATE=1
+  eval "$($BREW_PATH shellenv)"
+  export ZSH_PLUGINS_DIR="$(brew --prefix)/share"
+else
+  export ZSH_PLUGINS_DIR="/usr/share/zsh/plugins"
+fi
 
 # Pipenv
 export PIPENV_VENV_IN_PROJECT=1
@@ -37,7 +43,7 @@ export FZF_CTRL_T_OPTS="
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""' # Include hidden files
 
 # Activate syntax highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${ZSH_PLUGINS_DIR}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Disable underline
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
@@ -48,7 +54,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 # export ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
 
 # Activate autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${ZSH_PLUGINS_DIR}/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Activate history substring search
-source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ${ZSH_PLUGINS_DIR}/zsh-history-substring-search/zsh-history-substring-search.zsh
