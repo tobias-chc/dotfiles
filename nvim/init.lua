@@ -22,6 +22,7 @@ require('lazy').setup {
   require 'plugins.bufferline',
   require 'plugins.neotree',
   require 'plugins.colortheme',
+  -- require 'plugins.matteblacktheme',
   require 'plugins.lualine',
   require 'plugins.treesitter',
   require 'plugins.telescope',
