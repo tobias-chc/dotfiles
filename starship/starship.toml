@@ -1,3 +1,6 @@
+# Default Starship configuration for the devcontainer
+# feature: ghcr.io/tobiaschc/devcontainer-features/starship
+
 format = """
 $directory\
 $git_branch\
@@ -46,7 +49,7 @@ symbol = ' '
 style = 'teal'
 symbol = ' '
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-pyenv_version_name = true
+# pyenv_version_name = true
 pyenv_prefix = ''
 
 [lua]
