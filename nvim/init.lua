@@ -39,4 +39,5 @@ require('lazy').setup {
   -- require 'plugins.avante',
   require 'plugins.floaterm',
   require 'plugins.lazygit',
+  require 'plugins.debug',
 }
