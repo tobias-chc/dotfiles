@@ -3,7 +3,8 @@ return {
   version = '*',
   opts = {
     open_mapping = [[<leader>t]],
-    insert_mappings = false,
+    start_in_insert = true,
+    persist_mode = false,
     direction = 'float',
     float_opts = {
       border = 'rounded',
@@ -15,8 +16,10 @@ return {
       local opts = { buffer = term.bufnr, noremap = true, silent = true }
       -- Exit terminal mode and close window
       vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-      vim.keymap.set('n', '<esc>', ':q<CR>', opts)
       vim.keymap.set('n', 'q', ':q<CR>', opts)
+      vim.keymap.set('n', '<esc>', ':q<CR>', opts)
+      -- avoid conflict with toggleterm open mapping
+      vim.keymap.set('t', '<leader>t', ' t', opts)
     end,
   },
   config = function(_, opts)
